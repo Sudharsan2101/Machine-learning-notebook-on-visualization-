@@ -1,0 +1,173 @@
+---
+title: "Unit - 1"
+author: "Sudharsan"
+date: "2023-09-20"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ISLR)
+```
+
+```{r}
+set.seed(3)
+```
+
+```{r}
+y = rnorm (100)
+y
+```
+```{r}
+mean(y)
+```
+
+```{r}
+x = y + rnorm(100)
+```
+
+```{r}
+plot(x,y,col='green', xlab = "X-axis", ylab = "Y-axis", main = "plot")
+```
+
+```{r}
+seq(0,1, length = 10 )
+```
+
+```{r}
+?Auto
+```
+
+```{r}
+dim(Auto)
+```
+
+```{r}
+names(Auto)
+```
+
+```{r}
+attach(Auto)
+```
+
+```{r}
+boxplot(cylinders,mpg)
+```
+
+```{r}
+boxplot(cylinders,mpg,col = 'blue')
+```
+
+```{r}
+boxplot(cylinders,mpg,col = 'blue', varwidth = T, horizontal = T)
+```
+
+```{r}
+hist(mpg)
+```
+
+```{r}
+hist(mpg, col = 4)
+```
+
+```{r}
+hist(mpg,breaks = seq(min(mpg), max(mpg), length.out = 1))
+```
+
+```{r}
+class(cylinders)
+```
+
+```{r}
+str(Auto)
+```
+
+```{r}
+Auto$name
+```
+
+```{r}
+pairs(Auto)
+```
+
+```{r}
+summary(Auto)
+```
+
+```{r}
+attach(College)
+```
+
+```{r}
+summary(College)
+```
+
+```{r}
+dim(College)
+```
+
+```{r}
+?College
+```
+
+```{r}
+fix(College)
+```
+
+```{r}
+View(College)
+```
+
+```{r}
+pairs(College[,1:10])
+```
+
+```{r}
+boxplot(Outstate, Private, col='pink') # outstate of private college is really high
+```
+
+```{r}
+str(College)
+```
+
+```{r}
+Elite = rep("No", nrow(College))
+Elite[College$Top10perc >50] = 'Yes'
+Elite = as.factor(Elite)
+college = data.frame(College,Elite)
+```
+
+```{r}
+summary(college$Elite)
+```
+
+```{r}
+boxplot(Elite, Outstate)
+```
+
+```{r}
+par(mfrow = c(2,2))
+```
+
+```{r}
+boxplot(College)
+```
+
+**Unit - 2**
+
+
+```{r}
+(fit = lm(mpg~horsepower,Auto))
+```
+
+```{r}
+summary(fit)
+```
+
+```{r}
+
+```
+
